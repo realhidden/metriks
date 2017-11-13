@@ -1,15 +1,4 @@
-# [UNMAINTAINED] 
-
-I might revisit this hobby project in the future, but I currently do not have time to maintain this.
-
 # Metriks
-
-<!-- badges/ -->
-[![Build Status](https://secure.travis-ci.org/kvz/metriks.png?branch=master)](http://travis-ci.org/kvz/metriks "Check this project's build status on TravisCI")
-[![NPM version](http://badge.fury.io/js/metriks.png)](https://npmjs.org/package/metriks "View this project on NPM")
-[![Dependency Status](https://david-dm.org/kvz/metriks.png?theme=shields.io)](https://david-dm.org/kvz/metriks)
-[![Development Dependency Status](https://david-dm.org/kvz/metriks/dev-status.png?theme=shields.io)](https://david-dm.org/kvz/metriks#info=devDependencies)
-<!-- /badges -->
 
 metriks.io is a time-series graphing tool that runs on servers. if you can output a number, metriks will create a beautiful graph for you.
 it builds on top of 'ancient' `rrdtool` which has proven to work well in production. metriks tries to limit infrastructural dependencies and features in order to provide a robust and pleasant experience for simple graphing needs.

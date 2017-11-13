@@ -7,11 +7,13 @@ lib-cov
 *.pid
 *.gz
 # *.rrd
+.idea
 
 pids
 logs
 results
 
 npm-debug.log
+package-lock.json
 node_modules
 test/temp.rrd
