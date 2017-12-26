@@ -13,6 +13,9 @@ pids
 logs
 results
 
+png/
+rrd/
+
 npm-debug.log
 package-lock.json
 node_modules
