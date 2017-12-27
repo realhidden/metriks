@@ -16,7 +16,7 @@ var options = {
     //Image / HTML directory. Overrules workDir
     pngDir: workDir + '/png',
     //update interval (5 minutes default)
-    updateInterval: process.env.UPDATE_INTERVAL || 1000 * 60 * 5
+    updateInterval: process.env.UPDATE_INTERVAL || 1000 * 60
 }
 
 class Metriks {
@@ -28,7 +28,7 @@ class Metriks {
 
     start() {
         this.nodes['test'] = new MuninNode({
-            ip: '192.168.43.193',
+            ip: '192.168.0.24',
             port: 4949
         });
 
@@ -39,18 +39,22 @@ class Metriks {
             webServer.start();
         }
 
-        //this.updatetimeout = setTimeout(this.periodicupdate.bind(this), this.config.updateInterval)
         this.periodicupdate();
     }
 
     periodicupdate() {
-        //clearTimeout(this.updatetimeout);
-        Object.keys(this.nodes).forEach(function (item) {
+        if (this.updatetimeout!=null) {
+            clearTimeout(this.updatetimeout);
+            this.updatetimeout = null;
+        }
+        Object.keys(this.nodes).forEach((item) => {
             console.log("Updating " + item);
-            this.nodes[item].update(() => {
+            this.nodes[item].update(this.config, () => {
                 console.log("Node processing finished")
             });
-        }.bind(this));
+        });
+
+        this.updatetimeout = setTimeout(this.periodicupdate.bind(this), this.config.updateInterval)
     }
 }
 
