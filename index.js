@@ -28,7 +28,7 @@ class Metriks {
 
     start() {
         this.nodes['test'] = new MuninNode({
-            ip: '192.168.0.24',
+            ip: '192.168.0.25',
             port: 4949
         });
 
